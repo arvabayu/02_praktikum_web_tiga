@@ -3,10 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerHome1;
 use App\Http\Controllers\ControllerProducts1;
-use App\Http\Controllers\ControllerNews1;
 use App\Http\Controllers\ControllerPrograms1;
 use App\Http\Controllers\ControllerAboutUs1;
-use App\Http\Controllers\ControllerContactUs1;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,7 +29,6 @@ Route::prefix("kategori")->group(function(){
     Route::get("/kolak-kids-songs", [ControllerProducts1::class, 'kategori4']);
 });
 
-Route::get("/news/{berita}", [ControllerNews1::class, 'index']);
 
 Route::prefix("program")->group(function(){
     Route::get("/karir", [ControllerPrograms1::class, 'karir']);
@@ -40,4 +38,3 @@ Route::prefix("program")->group(function(){
 
 Route::get("/aboutus", [ControllerAboutUs1::class, 'index']);
 
-Route::get("/contact", [ControllerContactUs1::class, 'index']);
