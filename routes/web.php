@@ -16,7 +16,7 @@ use App\Http\Controllers\ControllerAboutUs1;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
@@ -37,4 +37,26 @@ Route::prefix("program")->group(function(){
 });
 
 Route::get("/aboutus", [ControllerAboutUs1::class, 'index']);
+*/
+Route::get('/hello', function () {
+    return view('hello', ['name' => 'Andi']);
+    });
 
+    Route::get('/home', function () {
+        return view('home', ['name' => 'Arva']);
+        });
+
+//Auth::routes();
+
+//Route::get('/home', [App\Http\Controllers\HomeController1::class, 'home'])->name('home');
+Route::prefix('/product', [App\Http\Controllers\ControllerProducts1::class, 'product'])->name('product');
+Route::get('/aboutus', [App\Http\Controllers\ControllerAboutUs1::class, 'index'])->name('aboutuss');
+Route::prefix("program")->group(function(){
+    Route::get("/karir", [ControllerPrograms1::class, 'karir']);
+    Route::get("/magang", [ControllerPrograms1::class, 'magang']);
+    Route::get("/kunjungan-industri", [ControllerPrograms1::class, 'kunjunganIndustri']);
+});
+Route::get('news/{id?}', [App\Http\Controllers\NewsController::class, 'index'])->name('news');
+//Auth::routes();
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

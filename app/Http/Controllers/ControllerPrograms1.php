@@ -8,15 +8,15 @@ class ControllerPrograms1 extends Controller
 
 {
     public function karir(){
-        return redirect("https://www.educastudio.com/program/karir");
+        return view("karir");
         
     }
 
     public function magang(){
-        return redirect("https://www.educastudio.com/program/magang");  
+        return view('magang');  
     }
 
     public function kunjunganIndustri(){
-        return redirect("https://www.educastudio.com/program/kunjungan-industri");
+        return view('kunjungan-Industri');
     }
 }
